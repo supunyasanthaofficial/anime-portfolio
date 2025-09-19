@@ -34,6 +34,11 @@ const Hero = () => {
           </div>
           <div className="hero-image">
             <div className="image-container">
+              <img
+                src="/public/images/dog.png"
+                alt="Profile"
+                className="round-image"
+              />
               <div className="floating-element"></div>
               <div className="floating-element"></div>
               <div className="floating-element"></div>
