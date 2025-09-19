@@ -1,0 +1,90 @@
+.nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav ul li {
+  margin: 0 15px;
+}
+
+.nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  position: relative;
+  padding: 5px 0;
+}
+
+.header.scrolled .nav ul li a {
+  color: #333;
+}
+
+.nav ul li a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(45deg, #ff6b6b, #ff8e53);
+  transition: width 0.3s ease;
+}
+
+.nav ul li a:hover::after {
+  width: 100%;
+}
+
+.nav ul li a:hover {
+  color: #ff6b6b;
+}
+
+@media (max-width: 768px) {
+  .nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: right 0.5s ease;
+    box-shadow: -5px 0 25px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav.active {
+    right: 0;
+  }
+
+  .nav ul {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .nav ul li {
+    margin: 15px 0;
+    opacity: 0;
+    transform: translateX(50px);
+    animation: fadeInRight 0.5s ease forwards;
+  }
+
+  .nav ul li a {
+    color: #333;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    display: block;
+  }
+
+  @keyframes fadeInRight {
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+}

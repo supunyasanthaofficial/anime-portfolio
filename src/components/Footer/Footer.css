@@ -1,0 +1,103 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Sawarabi+Mincho&display=swap");
+
+.footer {
+  background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+  color: #fff;
+  padding: 1rem 0;
+  text-align: center;
+  font-family: "Sawarabi Mincho", sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+.footer::before {
+  content: "✦ ✧ ✦";
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  color: rgba(255, 255, 255, 0.1);
+  font-size: 1rem;
+}
+
+.footer-logo a {
+  font-family: "Orbitron", sans-serif;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #ff4b5c;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.footer-logo a span {
+  color: #ffe227;
+}
+
+.footer-logo .jp-text {
+  font-size: 0.9rem;
+  margin-left: 5px;
+  color: #00fff7;
+}
+
+.footer-logo a:hover {
+  text-shadow: 0 0 10px #ff4b5c, 0 0 20px #ffe227;
+}
+
+.footer-links {
+  margin: 1.5rem 0;
+}
+
+.footer-links a {
+  margin: 0 12px;
+  color: #fff;
+  text-decoration: none;
+  position: relative;
+  transition: 0.3s;
+}
+
+.footer-links a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -3px;
+  left: 0;
+  background: #ff4b5c;
+  transition: width 0.3s;
+}
+
+.footer-links a:hover::after {
+  width: 100%;
+}
+
+.footer-social a {
+  margin: 0 10px;
+  font-size: 1.5rem;
+  color: #ffe227;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.footer-social a:hover {
+  color: #ff4b5c;
+  transform: scale(1.2) rotate(8deg);
+}
+
+.footer-bottom {
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.heart {
+  color: #ff4b5c;
+  animation: heartbeat 1.3s infinite;
+}
+
+@keyframes heartbeat {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}

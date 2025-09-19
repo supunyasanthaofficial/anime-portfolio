@@ -1,0 +1,152 @@
+.projects {
+  background-color: #000000;
+  padding: 80px 0;
+}
+
+.projects-filters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 40px;
+}
+
+.filter-btn {
+  padding: 10px 25px;
+  background: #1a1a1a;
+  border: 2px solid #333333;
+  border-radius: 30px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #ffffff;
+}
+
+.filter-btn:hover {
+  border-color: #ff6b6b;
+  color: #ff6b6b;
+}
+
+.filter-btn.active {
+  background: linear-gradient(45deg, #ff6b6b, #ff8e53);
+  border-color: transparent;
+  color: white;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 30px;
+}
+
+.project-card {
+  background: #1a1a1a;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.project-image {
+  position: relative;
+  overflow: hidden;
+  height: 250px;
+}
+
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.project-card:hover .project-image img {
+  transform: scale(1.1);
+}
+
+.project-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 107, 107, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.project-overlay.active {
+  opacity: 1;
+}
+
+.project-links {
+  display: flex;
+  gap: 20px;
+}
+
+.project-link {
+  width: 50px;
+  height: 50px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ff6b6b;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.project-link:hover {
+  transform: scale(1.1);
+}
+
+.project-content {
+  padding: 25px;
+}
+
+.project-title {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+.project-description {
+  color: #cccccc;
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.project-technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tech-tag {
+  padding: 5px 12px;
+  background: #333333;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  color: #ffffff;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-image {
+    height: 200px;
+  }
+}

@@ -1,0 +1,241 @@
+.skills-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.skills-text h3 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.skills-text p {
+  margin-bottom: 30px;
+  color: #666;
+  line-height: 1.8;
+}
+
+.skills-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.stat {
+  text-align: center;
+  padding: 20px;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.stat:hover {
+  transform: translateY(-5px);
+}
+
+.stat-number {
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ff6b6b;
+  margin-bottom: 5px;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.skills-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.skill-item {
+  margin-bottom: 15px;
+}
+
+.skill-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.skill-name {
+  font-weight: 600;
+  color: #333;
+}
+
+.skill-percentage {
+  color: #666;
+  font-weight: 500;
+}
+
+.skill-bar {
+  width: 100%;
+  height: 10px;
+  background: #f0f0f0;
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+}
+
+.skill-progress {
+  height: 100%;
+  border-radius: 5px;
+  position: relative;
+}
+
+.skill-progress::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-image: linear-gradient(
+    -45deg,
+    rgba(255, 255, 255, 0.2) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.2) 50%,
+    rgba(255, 255, 255, 0.2) 75%,
+    transparent 75%,
+    transparent
+  );
+  background-size: 10px 10px;
+  animation: move 1s linear infinite;
+}
+
+@keyframes move {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 10px 10px;
+  }
+}
+
+@media (max-width: 968px) {
+  .skills-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .skills-stats {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .skills-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .stat {
+    padding: 15px;
+  }
+
+  .stat-number {
+    font-size: 1.5rem;
+  }
+}
+/* Skills Section Background */
+.skills {
+  background-image: url("/images/ds2.jpg");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+/* Uncomment and modify the overlay */
+.skills-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(233, 217, 217, 0.9); /* White overlay with 90% opacity */
+  /* or you can use a darker overlay */
+  /* background: rgba(0, 0, 0, 0.7); */ /* Black overlay with 70% opacity */
+  z-index: 0;
+}
+
+/* Make sure this stays below the overlay modification */
+.skills-content {
+  position: relative;
+  z-index: 1;
+}
+/* Ensure content stays readable */
+.skills-content {
+  position: relative;
+  z-index: 1;
+}
+
+/* Pattern Background Alternative */
+.skills-background.pattern {
+  background-image: radial-gradient(
+      circle at 25% 25%,
+      rgba(97, 218, 251, 0.1) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 75% 75%,
+      rgba(255, 107, 107, 0.1) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 50% 50%,
+      rgba(78, 205, 196, 0.1) 0%,
+      transparent 50%
+    );
+  background-size: 300px 300px;
+  opacity: 0.3;
+}
+
+/* Animated Gradient Background Alternative */
+.skills-background.animated {
+  background: linear-gradient(-45deg, #f8f9fa, #e9ecef, #dee2e6, #ced4da);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+  opacity: 0.2;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Tech-themed pattern */
+.skills-background.tech-pattern {
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.7) 1px,
+      transparent 1px
+    ),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.7) 1px, transparent 1px);
+  background-size: 20px 20px;
+  opacity: 0.1;
+}
+
+/* Code-themed background */
+.skills-background.code-theme {
+  background-image: linear-gradient(
+      to right,
+      rgba(97, 218, 251, 0.1) 1px,
+      transparent 1px
+    ),
+    linear-gradient(to bottom, rgba(97, 218, 251, 0.1) 1px, transparent 1px);
+  background-size: 30px 30px;
+  opacity: 0.2;
+}
