@@ -24,7 +24,6 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      // Form validation
       if (
         !formData.name ||
         !formData.email ||
@@ -34,16 +33,13 @@ const Contact = () => {
         throw new Error("Please fill in all required fields");
       }
 
-      // Email validation
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!emailRegex.test(formData.email)) {
         throw new Error("Please enter a valid email address");
       }
 
-      // Simulate API call
       await new Promise((resolve, reject) => {
         setTimeout(() => {
-          // Simulate successful submission (90% success rate)
           if (Math.random() > 0.1) {
             resolve();
           } else {
@@ -55,7 +51,6 @@ const Contact = () => {
       console.log("Form submitted:", formData);
       setSubmitStatus("success");
 
-      // Reset form
       setFormData({
         name: "",
         email: "",
@@ -66,29 +61,23 @@ const Contact = () => {
       console.error("Submission error:", error);
       setSubmitStatus("error");
     } finally {
-      // Clean up
       setIsSubmitting(false);
-      // Reset status after 3 seconds
       setTimeout(() => setSubmitStatus(null), 3000);
     }
   };
 
   return (
     <section id="contact" className="contact section">
-      {/* Background Elements */}
-      <div className="contact-background">
-        <div className="contact-overlay"></div>
-        <div className="contact-shape contact-shape-1"></div>
-        <div className="contact-shape contact-shape-2"></div>
-      </div>
-
       <div className="container">
-        <h2 className="section-title">Get In Touch</h2>
+        <h2 className="section-title demon-slayer-title">⚔️ Get In Touch</h2>
 
         <div className="contact-content">
+          {/* LEFT SIDE - Info */}
           <div className="contact-info">
             <div className="contact-info-inner">
-              <h3>Let's Bring Your Ideas to Life</h3>
+              <h3 className="jp-heading">
+                繋ぐ心 - Let's Bring Your Ideas to Life
+              </h3>
               <p>
                 I'm currently available for freelance work and exciting new
                 projects. If you have an app idea or need help with your
@@ -160,6 +149,7 @@ const Contact = () => {
             </div>
           </div>
 
+          {/* RIGHT SIDE - Form */}
           <div className="contact-form-container">
             <form className="contact-form" onSubmit={handleSubmit}>
               <div className="form-header">
@@ -228,13 +218,11 @@ const Contact = () => {
               >
                 {isSubmitting ? (
                   <>
-                    <i className="fas fa-spinner fa-spin"></i>
-                    Sending...
+                    <i className="fas fa-spinner fa-spin"></i> Sending...
                   </>
                 ) : (
                   <>
-                    <i className="fas fa-paper-plane"></i>
-                    Send Message
+                    <i className="fas fa-paper-plane"></i> Send Message ✦
                   </>
                 )}
               </button>
