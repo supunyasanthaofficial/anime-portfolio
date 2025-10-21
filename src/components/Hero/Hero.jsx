@@ -35,7 +35,7 @@ const Hero = () => {
           <div className="hero-image">
             <div className="image-container">
               <img
-                src="/public/images/dog.png"
+                src="/images/profile.jpg"
                 alt="Profile"
                 className="round-image"
               />
