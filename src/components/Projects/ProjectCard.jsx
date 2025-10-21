@@ -1,33 +1,30 @@
-import React, { useState } from "react";
-import "./Projects.css";
+import React from "react";
 
 const ProjectCard = ({ project }) => {
-  const [isHovered, setIsHovered] = useState(false);
+  // Function to get a placeholder based on project title if image is not available
+  const getPlaceholder = (title) => {
+    if (title.includes("Delivery")) return "🚚";
+    if (title.includes("Music")) return "🎵";
+    if (title.includes("Clothing") || title.includes("Fashion")) return "👗";
+    if (title.includes("Flash")) return "⚡";
+    if (title.includes("Hotel")) return "🏨";
+    return "🗡️"; // Default Demon Slayer icon
+  };
 
   return (
-    <div
-      className="project-card"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
+    <div className="project-card">
       <div className="project-image">
-        <img
-          src={`/images/${project.image}`}
-          alt={project.title}
-          onError={(e) => {
-            e.target.src = "/images/placeholder.jpg"; // Fallback image
-          }}
-        />
-        <div className={`project-overlay ${isHovered ? "active" : ""}`}>
-          <div className="project-links">
-            <a href={project.link} className="project-link">
-              <i className="fas fa-eye"></i>
-            </a>
-            <a href={project.github} className="project-link">
-              <i className="fab fa-github"></i>
-            </a>
+        {project.image ? (
+          <img
+            src={`/images/${project.image}`}
+            alt={project.title}
+            className="project-image-real"
+          />
+        ) : (
+          <div className="project-image-placeholder">
+            {getPlaceholder(project.title)}
           </div>
-        </div>
+        )}
       </div>
       <div className="project-content">
         <h3 className="project-title">{project.title}</h3>
@@ -38,6 +35,11 @@ const ProjectCard = ({ project }) => {
               {tech}
             </span>
           ))}
+        </div>
+        <div className="project-links">
+          <a href={project.link} className="project-link">
+            <span>View Mission</span>
+          </a>
         </div>
       </div>
     </div>
