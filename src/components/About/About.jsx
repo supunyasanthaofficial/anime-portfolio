@@ -1,12 +1,12 @@
 import React, { useEffect, useRef } from "react";
 import "./About.css";
+import AboutScene from "./AboutScene";
 
 const About = () => {
   const sectionRef = useRef(null);
   const characterRef = useRef(null);
 
   useEffect(() => {
-    // Intersection Observer for scroll animations
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -32,8 +32,10 @@ const About = () => {
       id="about"
       className="about section demon-slayer-theme"
       ref={sectionRef}
+      style={{ position: "relative", overflow: "hidden" }}
     >
-      <div className="container">
+      <AboutScene />
+      <div className="container" style={{ position: "relative", zIndex: 1 }}>
         <div className="section-header">
           <h2 className="section-title animate-on-scroll">
             <span className="title-underline">About Me</span>
