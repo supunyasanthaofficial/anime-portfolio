@@ -6,7 +6,7 @@ const Hero = () => {
     <section id="home" className="hero">
       <div className="hero-background">
         <div className="hero-overlay"></div>
-        {/* Add video element */}
+
         <video autoPlay loop muted playsInline className="hero-video">
           <source src="/videos/deamonSlayer.mp4" type="video/mp4" />
           Your browser does not support the video tag.
@@ -35,7 +35,7 @@ const Hero = () => {
           <div className="hero-image">
             <div className="image-container">
               <img
-                src="/images/profile.jpg"
+                src="/images/dog.png"
                 alt="Profile"
                 className="round-image"
               />
