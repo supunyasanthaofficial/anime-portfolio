@@ -24,7 +24,7 @@
     "react-lottie": "^1.2.10",
     "react-router-dom": "^7.9.1",
     "react-scripts": "^5.0.1",
-    "three": "^0.181.0",
+    "three": "^0.181.1",
     "tilt.js": "^1.2.1",
     "web-vitals": "^5.1.0"
   },
